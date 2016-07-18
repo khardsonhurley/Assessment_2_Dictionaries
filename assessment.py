@@ -3,6 +3,7 @@
 **IMPORTANT:** these problems are meant to be solved using
 dictionaries and sets.
 """
+from random import choice
 
 def count_words(phrase):
     """Count unique words in a string.
@@ -212,8 +213,45 @@ def kids_game(names):
     a dictionary (with the super-fast lookup they provide) can help;
     good solutions here will definitely require a dictionary.
     """
+    #Since I did not have time to do this, I decided to pseudocode my ideas.
+    #I realize this is a lot like the markov chain exercise. 
+    
+    #start with empty list to put new sentence in. 
+    sentence = []
 
-    return []
+    #chose the first word from the given list to start. Add it to the new
+    #list that will be used to create the sentence. 
+    first_word = names[0]
+    sentence.append(first_word)
+    names.remove(first_word)
+
+    #get the last letter of the first word.
+    last_letter = first_word[-1]
+
+    #look through all of the words in names, to find one whose first letter is 
+    #the same as the last letter. 
+
+    #find the word, add it to the sentence list. 
+
+    #grab the last letter from that word
+
+    #iterate again to find another word that starts with that letter. 
+
+    #add it to the sentence. Keep going until there is not a match. 
+
+#I TRIED THIS, BUT IT DOES NOT WORK PAST THE SECOND WORD, PLEASE HELP.
+    #need some sort of while loop here to keep it going, cant figure out how 
+    #to get past the second word. 
+    for word in names: 
+        if last_letter == word[0]:
+            sentence.append(word)
+            names.remove(word)
+            word = names[0]
+            last_letter = word[-1]
+
+
+
+    return sentence
 
 #####################################################################
 # You can ignore everything below this.
